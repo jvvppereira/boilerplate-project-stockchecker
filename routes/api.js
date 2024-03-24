@@ -14,6 +14,17 @@ module.exports = function (app) {
       likes: -1
     }
   ];
+  
+  app.use(
+    helmet({
+      contentSecurityPolicy: {
+        // enable and configure
+        directives: {
+          defaultSrc: ["'self'"],
+          styleSrc: ["style.com"],
+        },
+      },
+    }));
 
   app.route('/api/stock-prices/')
     .get(function (req, res){
