@@ -1,5 +1,4 @@
 'use strict';
-const helmet = require("helmet");
 
 module.exports = function (app) { 
 
@@ -15,17 +14,6 @@ module.exports = function (app) {
       likes: -1
     }
   ];
-  
-  app.use(
-    helmet({
-      contentSecurityPolicy: {
-        // enable and configure
-        directives: {
-          scriptSrc: ["'self'"],
-          styleSrc: ["'self'"],
-        },
-      },
-    }));
 
   app.route('/api/stock-prices/')
     .get(function (req, res){
