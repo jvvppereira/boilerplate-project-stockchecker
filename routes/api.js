@@ -1,4 +1,5 @@
 'use strict';
+const helmet = require("helmet");
 
 module.exports = function (app) { 
 
@@ -20,8 +21,8 @@ module.exports = function (app) {
       contentSecurityPolicy: {
         // enable and configure
         directives: {
-          defaultSrc: ["'self'"],
-          styleSrc: ["style.com"],
+          scriptSrc: ["'self'"],
+          styleSrc: ["'self'"],
         },
       },
     }));
@@ -46,7 +47,8 @@ module.exports = function (app) {
       }).map(item => {
         const copyItem = {...item};
 
-        copyItem.price = Number(copyItem.price).toFixed(2);
+        //removed to be valid on test runner
+        // copyItem.price = Number(copyItem.price).toFixed(2);
 
         return copyItem;
       }).
