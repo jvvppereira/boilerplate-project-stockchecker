@@ -67,10 +67,4 @@ describe("Functional Tests", function () {
         done();
       });
   });
-  /**
-   * Viewing one stock and liking it: GET request to /api/stock-prices/
-    Viewing the same stock and liking it again: GET request to /api/stock-prices/
-    Viewing two stocks: GET request to /api/stock-prices/
-    Viewing two stocks and liking them: GET request to /api/stock-prices/
-   */
 });
